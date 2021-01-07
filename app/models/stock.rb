@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Stock < ApplicationRecord
-  has_many :user_stock
+  has_many :user_stock, dependent: :destroy
   has_many :users, through: :user_stock
 
   validates :name, :ticker, presence: true
